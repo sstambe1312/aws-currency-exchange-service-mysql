@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:128288625130:task-definition/aws-currency-exchange-service-mysql:1"
+        LoadBalancerInfo:
+          ContainerName: "aws-currency-exchange-service-mysql"
+          ContainerPort: "80"
+        PlatformVersion: "LATEST"
